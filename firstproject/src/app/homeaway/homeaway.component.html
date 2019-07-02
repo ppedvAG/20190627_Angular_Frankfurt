@@ -1,0 +1,7 @@
+<!-- <p (mouseenter)="home()" (mouseleave)="away()" [class.home]="isHome" [class.away]="!isHome">
+  {{getText() | uppercase}}
+</p> -->
+<!-- ODER -->
+<p (mouseenter)="home()" (mouseleave)="away()" [className]="isHome ? 'home' : 'away'">
+  {{getText() | uppercase}}
+</p>

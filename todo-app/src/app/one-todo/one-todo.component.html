@@ -1,0 +1,11 @@
+<div *ngIf="todo">
+  <h2>{{todo.title | uppercase}} Details</h2>
+  <div><span>id: </span>{{todo.id}}</div>
+  <div>
+    <label>Beschreibung:
+      <input [(ngModel)]="todo.title" placeholder="title" />
+    </label>
+    <button (click)="save()">SAVE</button>
+  </div>
+  <button (click)="goBack()">BACK</button>
+</div>

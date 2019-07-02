@@ -1,0 +1,38 @@
+<input ngModel #inpVar="ngModel" type="number" required>
+
+<p>
+  inpVar.value {{inpVar.value}}
+  <br>
+  inpVar.valid {{inpVar.valid}}
+  <br>
+  inpVar.touched {{inpVar.touched}}
+  <br>
+  inpVar.pristine {{inpVar.pristine}}
+  <br>
+</p>
+
+<h3>Übung PASSWORD-CONFIRM</h3>
+<input ngModel #inpPsw1="ngModel" type="password" pattern="^[a-zA-Z]\w{3,14}$">
+<input ngModel #inpPsw2="ngModel" type="password" pattern="^[a-zA-Z]\w{3,14}$">
+
+<p>The password's first character must be a letter,
+  it must contain at least 4 characters and no more
+  than 15 characters and no characters other than letters,
+  numbers and the underscore may be used</p>
+<!-- Der Controller scheint auch die Pattern zu kontrollieren. Ist es wirklich so? -->
+  <button [disabled]="inpPsw1.pristine || (inpPsw1.value !== inpPsw2.value)">CONFIRM</button>
+  <p *ngIf="inpPsw1.value !== inpPsw2.value, then confirmMsg">Die Eingaben stimmen nicht überein</p>
+  <ng-template #confirmMsg>Die Passwörter stimmen überein</ng-template>
+
+  <p>
+    #inpPsw1.value    {{inpPsw1.value}}    <br>
+    #inpPsw1.valid    {{inpPsw1.valid}}    <br>
+    #inpPsw1.touched  {{inpPsw1.touched}}    <br>
+    #inpPsw1.pristine {{inpPsw1.pristine}}    <br>
+  </p>
+  <p>
+    #inpPsw2.value    {{inpPsw2.value}}    <br>
+    #inpPsw2.valid    {{inpPsw2.valid}}    <br>
+    #inpPsw2.touched  {{inpPsw2.touched}}    <br>
+    #inpPsw2.pristine {{inpPsw2.pristine}}    <br>
+  </p>

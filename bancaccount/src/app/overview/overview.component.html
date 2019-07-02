@@ -1,0 +1,20 @@
+<h3 [style.color]="bas.initialBalance > 0 ? 'green' : 'red'">{{bas.initialBalance}}</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Beschreibung</th>
+      <th>Datum</th>
+      <th>Betrag</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tr of bas.transactions">
+      <td>{{tr.description}}</td>
+      <td>{{tr.date | date:'shortDate'}}</td>
+      <td [style.color]="tr.amount > 0 ? 'green' : 'red'">{{tr.amount}}</td>
+      </tr>
+  </tbody>
+</table>
+
+<h3 [style.color]="bas.getCurrentBalance() > 0 ? 'green' : 'red'">{{bas.getCurrentBalance()}}</h3>
+

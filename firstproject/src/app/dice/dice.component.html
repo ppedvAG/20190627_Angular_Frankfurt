@@ -1,0 +1,11 @@
+<p>
+  dice works!
+  Gewürfelt, die Zahl ist
+  <span [class.even]="zahl % 2 !== 0">{{zahl}}</span>
+  !
+</p>
+<p *ngIf="zahl % 2 == 0, then even, else odd"></p>
+<ng-template #even>Sie haben eine gerade Zahl!</ng-template>
+<ng-template #odd>Sie haben eine ungerade Zahl</ng-template>
+<p *ngIf="zahl == 6">Bingo! die maximale Zahl</p>
+<!-- FRAGE: bei odd weitere ngIf -->

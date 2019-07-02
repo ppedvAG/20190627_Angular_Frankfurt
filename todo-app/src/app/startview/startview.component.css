@@ -1,0 +1,12 @@
+h3 {
+  font-size: 4em;
+  text-align: center;
+  color: wheat;
+  font-weight: bold;
+}
+
+a > h4 {
+  background-color: wheat;
+  font-size: 3em;
+  text-align: center;
+}

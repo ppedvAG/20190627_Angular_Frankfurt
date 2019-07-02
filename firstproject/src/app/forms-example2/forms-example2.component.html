@@ -1,0 +1,10 @@
+<form>
+  <!-- ERROR Error: "If ngModel is used within a form tag, either the name attribute must be set or the form
+      control must be defined as 'standalone' in ngModelOptions.
+      Example 1: <input [(ngModel)]="person.firstName" name="first">
+      Example 2: <input [(ngModel)]="person.firstName" [ngModelOptions]="{standalone: true}">" -->
+  <input [(ngModel)]="age" type="number" (keyup.enter)="onClick()" name="inpAge">
+  <button type="button" (click)="onClick()">OK</button>
+  <output>{{message}}</output>
+</form>
+

@@ -1,0 +1,10 @@
+<form action="#" #myForm="ngForm" (ngSubmit)="getName(myForm.value)">
+  <input type="text" ngModel name="fname" placeholder="firstname">
+  <input type="text" ngModel name="lname" placeholder="lastname">
+  <!-- ohne ngModel werden die Variablen nicht belegt -->
+  <button (click)="getName(myForm.value)">SUBMIT</button>
+
+</form>
+<output>fn {{firstname}}</output>
+<br>
+<output>ln {{lastname}}</output>

@@ -1,0 +1,9 @@
+<h2>Neue Transaktion</h2>
+
+<!-- form>input*3+button -->
+<form action="#" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+  <input type="text" name="descr" [(ngModel)]="descrVar" placeholder="Beschreibung">
+  <input type="date" name="date" [(ngModel)]="dateVar" placeholder="Datum">
+  <input type="number" name="amount" [(ngModel)]="amountVar" placeholder="Betrag">
+  <button>ADD</button>
+</form>

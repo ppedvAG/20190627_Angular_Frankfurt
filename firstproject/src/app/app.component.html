@@ -1,0 +1,82 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+    Diesmal in {{city}}
+  </h1>
+</div>
+<h2>Beispiel TIME</h2>
+<app-time></app-time>
+<hr>
+<h2>Beispiel DICE</h2>
+<app-dice></app-dice>
+<hr>
+<h2>Beispiel RATING</h2>
+<app-rating [zahl]="4"></app-rating>
+<hr>
+<h2>Beispiel CARD</h2>
+<app-card [value]="'K'" [suit]="'diamonds'"></app-card>
+<app-card [value]="'Q'" [suit]="'spades'"></app-card>
+<app-card [value]="'6'" [suit]="'hearts'"></app-card>
+<h3>mit *ngFor</h3>
+<app-card *ngFor="let card of cards" [value]="card.value" [suit]="card.suit"></app-card>
+
+
+<hr>
+<h2>Beispiel DIASHOW</h2>
+<app-diashow [images]="[
+'https://picsum.photos/400/300?image=0',
+'https://picsum.photos/400/300?image=10',
+'https://picsum.photos/400/300?image=20',
+'https://picsum.photos/400/300?image=40'
+]"></app-diashow>
+<hr>
+<h2>Beispiel ROMAN-NUMBER</h2>
+<app-roman-number [zahl]="2"></app-roman-number>
+<app-roman-number [zahl]="4"></app-roman-number>
+<app-roman-number [zahl]="7"></app-roman-number>
+<h3>mit *ngFor</h3>
+<app-roman-number *ngFor="let x of [2, 4, 7]" [zahl]="x" [style.font-size.px]="x * 10"></app-roman-number>
+<hr>
+<h2>Beispiel HOMEAWAY</h2>
+<app-homeaway></app-homeaway>
+<hr>
+<h2>Beispiel TIMER</h2>
+<!-- Timer started: Variante 1 -->
+<!-- Timer with input & enter -->
+<input type="number" placeholder="put seconds then enter" #inpSec (keyup.enter)="timerComp.onClick()">
+<!--   -->
+<app-timer [time]="inpSec.value" (tick)="handleTick($event)" (start)="handleStart()" #timerComp></app-timer>
+<!-- Timer started: Variante 2 -->
+<!-- <app-timer [time]="10" (tick)="handleTick($event)" #timer></app-timer>
+<div *ngIf="timer.started">Timer started</div> -->
+<div>{{timerMessage}}</div>
+<hr>
+<h2>Beispiel FORMS 1</h2>
+<app-forms-example1></app-forms-example1>
+<hr>
+<h2>Beispiel FORMS 2</h2>
+<app-forms-example2></app-forms-example2>
+<hr>
+<h2>Beispiel FORMS 3</h2>
+<app-forms-example3></app-forms-example3>
+<hr>
+
+
+
+
+
+
+
+<h2>Here are some links to help you start: </h2>
+<ul>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  </li>
+</ul>
